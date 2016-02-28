@@ -2,7 +2,7 @@
 
 ## Overview
 
-Angular offers us the powerful concept of filters. Let's take a look at what they can offer us.
+Angular offers us the powerful concept of filters. They allow us to easily manipulate data, such as changing a date from a unix timestamp to a human readable format or simply change the text to uppercase. Let's take a look at what they can offer us.
 
 ## Objectives
 
@@ -16,20 +16,20 @@ Filters are simple functions that we can use to manipulate (or filter) data in A
 
 We've touched on the `ng-repeat` directive for repeating a list of data - wouldn't it be neat if we could filter on that data too? This comes in useful when we a large dataset and would like to quickly search through it to find the relevant data.
 
-We can do this using the pipe operator (`|`) after the ng-repeat. The syntax for this is `| filterName: value`. We can use different filters (by changing the `fieldName` part) and change what the filter criteria is by changing the `value` part.
+We can do this using the pipe operator (`|`) after the ng-repeat. The syntax for this is `| filterName: value`. We can use different filters (by changing the `filterName` part) and change what the filter criteria is by changing the `value` part.
 
 The filter that we'd use to filter an ng-repeat by a value is simply named `filter`! We can pass a variable to this filter and it will search the whole dataset for us.
 
 ```html
-<input ng-model="$ctrl.search" />
+<input ng-model="ctrl.search" />
 
 <ul>
-	<li ng-repeat="data in $ctrl.data | filter: $ctrl.search">
+	<li ng-repeat="data in ctrl.data | filter: ctrl.search">
 	</li>
 </ul>
 ```
 
-This will filter our dataset by the value of the input data - providing us with a really simple yet powerful search filter!
+This will filter our dataset by the value of the input data - providing us with a really simple yet powerful search filter! As we type in the input, `ctrl.search` gets updated. Angular notices that we're using `ctrl.search` as a filter and filters the repeat by the value. This means that if we type in "bob", only results containing "bob" will be displayed!
 
 ## Display values
 
@@ -39,7 +39,7 @@ Another powerful filter is `date`. This can take a unix timestamp and returns it
 
 ```html
 <abbr>
-	{{ $ctrl.date | date:'medium' }} <!-- Dec 25, 2016 2:23:56 PM -->
+	{{ ctrl.date | date:'medium' }} <!-- Dec 25, 2016 2:23:56 PM -->
 </abbr>
 ```
 
@@ -71,6 +71,17 @@ function SomeController($filter) {
 }
 ```
 
+We would then use `filteredList` like normal in our `ng-repeat`:
+
+```html
+<ul>
+	<li ng-repeat="item in ctrl.filteredList">
+		{{ item.name }}
+	</li>
+</ul>
+```
+
 ## Resources
 
+- [https://docs.angularjs.org/api/ng/filter](Built-in Angular filters)
 - [https://docs.angularjs.org/api/ng/filter/date](Date filter docs)
