@@ -83,5 +83,5 @@ We would then use `filteredList` like normal in our `ng-repeat`:
 
 ## Resources
 
-- [https://docs.angularjs.org/api/ng/filter](Built-in Angular filters)
-- [https://docs.angularjs.org/api/ng/filter/date](Date filter docs)
+- [Built-in Angular filters](https://docs.angularjs.org/api/ng/filter)
+- [Date filter docs](https://docs.angularjs.org/api/ng/filter/date)
