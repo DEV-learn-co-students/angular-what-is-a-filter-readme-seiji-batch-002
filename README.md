@@ -14,7 +14,7 @@ Angular offers us the powerful concept of filters. They allow us to easily manip
 
 Filters are simple functions that we can use to manipulate (or filter) data in Angular.
 
-We've touched on the `ng-repeat` directive for repeating a list of data - wouldn't it be neat if we could filter on that data too? This comes in useful when we a large dataset and would like to quickly search through it to find the relevant data.
+We've touched on the `ng-repeat` directive for repeating a list of data - wouldn't it be neat if we could filter on that data too? This comes in handy when we have a large dataset and would like to quickly search through it to find the relevant data.
 
 We can do this using the pipe operator (`|`) after the ng-repeat. The syntax for this is `| filterName: value`. We can use different filters (by changing the `filterName` part) and change what the filter criteria is by changing the `value` part.
 
